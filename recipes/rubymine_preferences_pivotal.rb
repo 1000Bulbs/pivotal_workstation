@@ -1,4 +1,6 @@
-rubymine_preferences_dir = "#{WS_HOME}/Library/Preferences/RubyMine40"
+Chef::Log.warn 'Please use https://github.com/pivotal-sprout/sprout instead'
+
+rubymine_preferences_dir = "#{WS_HOME}/Library/Preferences/RubyMine50"
 preferences_git_repo_location =  "#{Chef::Config[:file_cache_path]}/Pivotal-Preferences-RubyMine"
 
 git preferences_git_repo_location do

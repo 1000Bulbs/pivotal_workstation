@@ -1,3 +1,5 @@
+Chef::Log.warn 'Please use https://github.com/pivotal-sprout/sprout instead'
+
 include_recipe "pivotal_workstation::homebrew"
 include_recipe "pivotal_workstation::increase_shared_memory"
 
@@ -22,7 +24,7 @@ run_unless_marker_file_exists("postgres") do
     recursive true
   end
 
-  brew_install "postgresql"
+  brew "postgresql"
 
   execute "create the database" do
     command "/usr/local/bin/initdb -U postgres --encoding=utf8 --locale=en_US /usr/local/var/postgres"
@@ -71,7 +73,7 @@ run_unless_marker_file_exists("postgres") do
 end
 
 ruby_block "test to see if postgres is running" do
-block do
+  block do
     require 'socket'
     postgres_port = 5432
     begin

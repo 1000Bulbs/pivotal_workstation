@@ -1,1 +1,3 @@
-brew_install "node"
+Chef::Log.warn 'Please use https://github.com/pivotal-sprout/sprout instead'
+
+brew "node"

@@ -1,7 +1,7 @@
-include_recipe "pivotal_workstation::homebrew"
+Chef::Log.warn 'Please use https://github.com/pivotal-sprout/sprout instead'
 
 if node["platform"] != "mac_os_x"
   package "git"
 else
-  brew_install "git"
+  brew "git"
 end
